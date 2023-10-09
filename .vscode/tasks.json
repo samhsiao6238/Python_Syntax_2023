@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Convert to Markdown",
+            "type": "shell",
+            "command": "/Volumes/SSD_01/00_Python課程專用/Python_Syntax_2023/00_自訂腳本/convert_to_md.sh",
+            "args": ["${file}"],
+            "problemMatcher": []
+        }
+    ]
+}
