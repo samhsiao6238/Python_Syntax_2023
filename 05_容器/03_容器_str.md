@@ -144,8 +144,8 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 
 12. 串接
 
-    - 是指使用指定字符串接字串
-    - strA.join(strB)，以字串 strA 將 strB 連接起來成為新的字串
+    - 是指使用 `指定字符` 來 `串接字串`
+    - `strA.join(strB)` 以字串 `strA` 將 `strB` 連接起來成為新的字串
 
     ```python
     # join
@@ -154,7 +154,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     # 將「_」插入「Hello」字串中
     str_5.join(str_4)
     ```
-    _輸出_
+    _輸出 `str_5`_
     ```bash
     'H_e_l_l_o'
     ```
@@ -177,7 +177,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 
     _特別注意_
 
-    _也可以使用「join」串接 list，串接之後會轉型為字串，也就是逐一取出串接為字串_
+    _也可以使用 `join` 串接 `list`，串接之後會 `轉型為字串`，也就是逐一取出串接為字串_
 
     ```python
     # 用全形頓號將['1', '2', '3', '4', '5']串起來
@@ -186,7 +186,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     str_4_2 = str_4.join(['1', '2', '3', '4', '5'])
     print(type(['1', '2', '3', '4', '5']))
     print(type(str_4_2))
-    str_4_2
+    print(str_4_2)
     ```
     _輸出_
     ```bash
@@ -199,15 +199,18 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 13. 字串的長度
 
     ```python
-    str_1.replace('、', '')
+    str_1 = 'H、e、l、l、o、_、0、1'
+    s_1 = str_1.replace('、', '')
     print(str_1)
+    print(s_1)
     # 長度
-    len(str_1)
+    print(len(str_1))
+    print(len(s_1))
     ```
     _輸出_
-    ```bash
+    H、e、l、l、o、_、0、1
     Hello_01
-
+    15
     8
     ```
 
@@ -259,30 +262,75 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 
 15.  比對字串
 
+    - 透過 `+` id會相同
     ```python
     # 比對兩個字串的id是否相同
     s1 = 'hello'
     s2 = 'hello'
-    print(s1, id(s1))  # 相同 ID 
-    print(s2, id(s2))  # 相同 ID 
     # 透過「+」串接，id會相同
     s3 = 'hell' + 'o'
-    print(s3, id(s3))  # 假設輸出 140240571615392
-    # 透過 join() 串接，id會不同
+    print(s1, id(s1))  # 相同 ID 
+    print(s2, id(s2))  # 相同 ID 
+    print(s3, id(s3))  # 相同 ID 
+    ```
+    _結果_
+    ```bash
+    hello 4361139856
+    hello 4361139856
+    hello 4361139856
+    ```
+
+    - 透過 `join()` 串接，id會不同
+    ```python
+    s1 = 'hello'
     s4 = ''.join(['h', 'e', 'l', 'l', 'o'])
+    print(s1, id(s1)) 
     print(s4, id(s4))  # 不同的 ID
-    # 透過變數串接，id會不同
+    ```
+    _結果_
+    ```bash
+    hello 4361139856
+    hello 4366691104
+    ```
+    
+    - 透過變數串接，id會不同
+    ```python
+    s1 = 'hello'
     s5 = 'o'
     s6 = 'hell' + s5
-    print(s6, id(s6))  # 不同的 ID
-    # 通過f-string格式化操作來創建字串，id會不同
+    print(s1, id(s1)) 
+    print(s6, id(s6)) # 不同的 ID
+    ```
+    _結果_
+    ```bash
+    hello 4361139856
+    hello 4366683952
+    ```
+    
+    - 通過 `f-string` 格式化操作來創建字串，id會不同
+    ```python
+    s1 = 'hello'
     s7 = f'hell{s5}'
-    print(s7, id(s7))  # 不同的 ID
-    # 字串內容包含特殊字符，id會不同
+    print(s1, id(s1))
+    print(s7, id(s7))
+    ```
+    _結果_
+    ```bash
+    hello 4361139856
+    hello 4366683952
+    ```
+    
+    - 字串內 `容包含特殊字符`，id 會不同
+    ```python
     s10 = 'Hello!'
     s11 = 'Hello!'
     print(s10, id(s10))  # 不同的 ID
     print(s11, id(s11))  # 不同的 ID
+    ```
+    _結果_
+    ```bash
+    Hello! 4366693264
+    Hello! 4366686784
     ```
 
 
