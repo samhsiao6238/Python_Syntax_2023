@@ -204,7 +204,7 @@
 
 <br>
 
-10.  透過 `range()` 創建多維陣列
+10. 透過 `range()` 創建多維陣列
 
     ```python
     matrix = [[i*j for j in range(1, 4)] for i in range(1, 4)]
