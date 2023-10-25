@@ -1,29 +1,42 @@
 # List 列表
 
-- 可變（mutable）
+<br>
+
+## 特性
+
+- 可變 `mutable`
 
 - 有序
 
 - 成員可以是不同類型的元素
 
+<br>
+
 ## 初始化
 
+- 範例
 
-```python
-# 初始化一個空的 list
-my_list = []
-print(my_list)
-# 顯示 list 的資料型態
-print(type(my_list))
-```
-*輸出結果*
-```
+    ```python
+    # 初始化一個空的 list
+    my_list = []
+    print(my_list)
+    # 顯示 list 的資料型態
+    print(type(my_list))
+    ```
+    *輸出結果*
+    ```bash
     []
-```
+    <class 'list'>
+    ```
+
+<br>
+
 
 ## 方法
 
-### 1. append 加入
+<br>
+
+1. append 加入
 
 - append(element) 會將一個元素(element)添加到列表的最後
   
@@ -43,7 +56,9 @@ print(my_list)
     ['a', 'b']
 ```
 
-### 2. insert 插入
+<br>
+
+2. insert 插入
 
 - insert(index, element): 在指定位置插入一個元素
 
@@ -66,7 +81,9 @@ print(my_list) # ['a', 'd', 'c', 'b']
     ['a', 'd', 'c', 'b']
 ```
 
-### 3. extend 加入多個元素
+<br>
+
+1. extend 加入多個元素
 
 - extend(iterable) 是將一個可迭代物件的所有元素添加到列表的末尾
 
@@ -86,7 +103,9 @@ print(my_list) # ['d', 'e', 'f', 'g', 'h', 'i']
     ['d', 'e', 'f', 'g', 'h', 'i']
 ```
 
-### 4. remove 移除
+<br>
+
+1. remove 移除
 
 - remove(element): 移除列表中第一個出現的指定元素
 - 若有多個相同的元素，只會移除第一個出現的元素
@@ -123,7 +142,9 @@ print(f'觀察是否回傳值：{return_value}') # None
     觀察是否回傳值：None
 ```
 
-### 5. pop 取出一個元素
+<br>
+
+1. pop 取出一個元素
 
 - pop(index): 移除並傳出列表中指定位置的元素
 - 若沒有指定位置，則會移除並傳出最後一個元素
@@ -147,7 +168,9 @@ print(f'取出的元素是 {_element}') # d
     取出的元素是 d
 ```
 
-### 6. index 找出元素的位置
+<br>
+
+1. index 找出元素的位置
 
 - index(element): 返回列表中第一個出現的指定元素的索引
 
@@ -163,7 +186,9 @@ print(f'第一次出現 BBB 的索引位置是 {_index}') # 1
     第一次出現 BBB 的索引位置是 1
 ```
 
-### 7. count 計算元素出現的次數
+<br>
+
+1. count 計算元素出現的次數
 
 - count(element): 返回列表中出現的指定元素出現的次數
 
@@ -179,7 +204,9 @@ print(f'元素 EE 出現的次數 = {_count}') # 3
     元素 EE 出現的次數 = 3
 ```
 
-### 8. sort 排序
+<br>
+
+1. sort 排序
 - 沒有傳出值
 - 可以設置參數 reverse=True 來反向排序
 - 會直接改變原來的數列 my_list
@@ -205,7 +232,8 @@ print(f'傳出值為 {return_value}') # None
     傳出值為 None
 ```
 
-### 9.  reverse 反轉
+<br>
+1.  reverse 反轉
 
 - 沒有傳出值
 - 會直接改變原來的數列 my_list
@@ -226,7 +254,9 @@ print(f'傳出值為 {return_value}') # None
     傳出值為 None
 ```
 
-### 10. copy 淺複製
+<br>
+
+1.  copy 淺複製
 
 - 兩個數列的內容相同，但不是同一個物件
 
@@ -248,7 +278,10 @@ print(my_list is my_list_copy) # False
     False
 
 ```
-### 11. clear 清除
+
+<br>
+
+1.  clear 清除
 
 - clear 會清除所有元素
 - 會直接改變原來的數列 my_list
@@ -270,7 +303,9 @@ print(f'傳出值為 {return_value}') # None
     傳出值為 None
 ```
 
-### 12. 負數索引
+<br>
+
+1.  負數索引
 
 
 ```python
@@ -287,6 +322,8 @@ print(my_list[-2]) # e
     e
 ```
 
+<br>
+
 ---
 
-END
+_END_
