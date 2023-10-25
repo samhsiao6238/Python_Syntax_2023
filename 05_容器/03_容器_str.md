@@ -118,26 +118,34 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 10. 搜尋並傳回下標（索引）
 
     ```python
-    str_1.find('0')
+    str_1 = 'Hello_01'
+    print(str_1.find('H'))
+    print(str_1.find('0'))
     ```
     _輸出_
     ```bash
+    0
     6
     ```
 
 11. 刪除開頭與結尾的空白字串符
 
     ```python
-    str_1.strip()
+    str_3 = ' Hello '
+    s_3 = str_3.strip()
+    print(str_3)
+    print(s_3)
     ```
-    _輸出_
+    _輸出：原字串不受影響，頭尾空格都還在_
     ```bash
-    'Hello_01'
+     Hello 
+    Hello
     ```
 
-12. 串接(是指「使用指定字符串接字串」)
+12. 串接
 
-- strA.join(strB) 以字串 strA 將 strB 連接起來成為新的字串
+    - 是指使用指定字符串接字串
+    - strA.join(strB)，以字串 strA 將 strB 連接起來成為新的字串
 
     ```python
     # join
@@ -151,7 +159,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     'H_e_l_l_o'
     ```
 
-    *下面這樣舉例比較清楚*
+    _下面這樣舉例比較清楚_
 
     ```python
     # 用全形頓號將'12345'串起來
