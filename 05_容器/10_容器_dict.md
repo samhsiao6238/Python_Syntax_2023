@@ -156,14 +156,14 @@
 4. get 取值
  
  
-- 當不確定一個鍵是否存在於字典中時，可以使用 get 方法來取得該鍵的值。
-- 如果鍵不存在，get 方法會傳回 None 或指定的默認值，而不會發生錯誤使系統崩潰，這是一種安全的方法。
+   - 當不確定一個鍵是否存在於字典中時，可以使用 get 方法來取得該鍵的值。
+   - 如果鍵不存在，get 方法會傳回 None 或指定的默認值，而不會發生錯誤使系統崩潰，這是一種安全的方法。
 
 
     ```python
     # 初始化字典
     data = {"AAA": "aaa", "BBB": 333}
-    # 取出 address 這個 key 對應的值，預設 None 的時候返回的內容
+    # 取出 address 這個 key 對應的值，預設 None 的時候返回的內容為'N/A'
     print(data.get("CCC", "N/A"))   # 'N/A'
     # 若沒有預設值，會傳出 None
     print(data.get("DDD"))   # 'None'
@@ -182,7 +182,7 @@
 
 <br>
 
-5. setdefault 設定預設值
+1. setdefault 設定預設值
 
 - 使用 key 進行查詢，若有對應的 value 會回傳指定 key 的 value，如果該 key 不存在於字典中，則添加 key 並設定其值為默認值。
 
