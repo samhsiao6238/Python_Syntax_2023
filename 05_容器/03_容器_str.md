@@ -4,7 +4,6 @@
 
 ## 1. 表達
 
-
 ```python
 #
 str_1 = 'Hello_01'
@@ -15,6 +14,7 @@ print(str_1)
 print(str_2)
 print(str_3)
 ```
+
 ```
     Hello_01
     Hello_02
@@ -23,7 +23,6 @@ print(str_3)
 
 ## 2. 相加
 
-
 ```python
 str = 'Hello' + ', ' + 'World'
 print(str)
@@ -31,9 +30,7 @@ print(str)
 
     Hello, World
 
-
-##3. 透過索引或稱「下標」取出指定位置的字元
-
+## 3. 透過索引或稱「下標」取出指定位置的字元
 
 ```python
 str_1[2]
@@ -48,6 +45,7 @@ str_1[2]
 ```python
 str_1[2:4]
 ```
+
 ```
     'll'
 ```
@@ -58,12 +56,12 @@ str_1[2:4]
 # 顯示反轉
 str_1[::-1]
 ```
+
 ```
     '10_olleH'
 ```
 
 ## 5-1. 轉換為小寫
-
 
 ```python
 str_1.lower()
@@ -73,34 +71,31 @@ str_1.lower()
     'hello_01'
 ```
 
-
 ## 5-2. 轉換為大寫
-
 
 ```python
 str_1.upper()
 ```
+
 ```
     'HELLO_01'
 ```
 
 ## 6. 替換
-   
-   字串本身是不可變的，透過置換後，原本的字串依舊不變，新的值要透過賦值（或稱「指定」）取得
 
+   字串本身是不可變的，透過置換後，原本的字串依舊不變，新的值要透過賦值（或稱「指定」）取得
 
 ```python
 str_1.replace('l', 'L')
 ```
+
 ```
     'HeLLo_01'
 ```
 
-
 ## 7. 分割
-   
-*跟置換相同，這並不會改變原本的內容*
 
+*跟置換相同，這並不會改變原本的內容*
 
 ```python
 str_1.split('_')
@@ -110,41 +105,37 @@ str_1.split('_')
     ['Hello', '01']
 ```
 
-
-
 ```python
 str_1
 ```
+
 ```
     'Hello_01'
 ```
 
-
 ## 8. 搜尋並傳回下標（索引）
-
 
 ```python
 str_1.find('0')
 ```
+
 ```
     6
 ```
 
-
 ## 9. 刪除開頭與結尾的空白字串符
-
 
 ```python
 str_1.strip()
 ```
+
 ```
     'Hello_01'
 ```
 
 ## 10. 串接(是指「使用指定字符串接字串」)
-    
-- strA.join(strB) 以字串 strA 將 strB 連接起來成為新的字串
 
+- strA.join(strB) 以字串 strA 將 strB 連接起來成為新的字串
 
 ```python
 # join
@@ -160,7 +151,6 @@ str_5.join(str_4)
 
 *下面這樣舉例比較清楚*
 
-
 ```python
 # 用全形頓號將'12345'串起來
 str_4 = '、 '
@@ -169,17 +159,16 @@ str_4_1 = str_4.join('12345')
 print(type(str_4_1))
 str_4_1
 ```
+
 ```
     <class 'str'
 
     '1、 2、 3、 4、 5'
 ```
 
-
 *特別注意*
 
 *也可以使用「join」串接 list，串接之後會轉型為字串，也就是逐一取出串接為字串*
-
 
 ```python
 # 用全形頓號將['1', '2', '3', '4', '5']串起來
@@ -190,6 +179,7 @@ print(type(['1', '2', '3', '4', '5']))
 print(type(str_4_2))
 str_4_2
 ```
+
 ```
     <class 'list'
     <class 'str'
@@ -197,9 +187,7 @@ str_4_2
     '1、 2、 3、 4、 5'
 ```
 
-
 ## 11. 字串的長度
-
 
 ```python
 str_1.replace('、', '')
@@ -207,22 +195,22 @@ print(str_1)
 # 長度
 len(str_1)
 ```
+
 ```
     Hello_01
 
     8
 ```
 
-
 ## 12. 遍歷
-    
-- 看一下 str_1 的內容
 
+- 看一下 str_1 的內容
 
 ```python
 for i in str_1:
     print(i)
 ```
+
 ```
     H
     e
@@ -236,33 +224,31 @@ for i in str_1:
 
 - 看一下 str_4_2 的內容與長度，因全形文字佔位2
 
-
 ```python
 for i in str_4_2:
     print(i)
 len(str_4_2)
 ```
+
 ```
     1
     、
-     
+   
     2
     、
-     
+   
     3
     、
-     
+   
     4
     、
-     
+   
     5
 
     13
 ```
 
-
 ## 13. 比對字串
-
 
 ```python
 # 比對兩個字串的id是否相同
@@ -290,6 +276,24 @@ print(s10, id(s10))  # 不同的 ID
 print(s11, id(s11))  # 不同的 ID
 ```
 
+
+## 14. 與 ASCII 的轉換
+
+```python
+ascii_val = ord('A')  # 65
+char_from_ascii = chr(65)  # 'A'
+print(ascii_val)
+print(ascii_val)
+```
+_OUTPUT_
+```bash
+65
+'A'
+```
+
+
+<br>
+
 ---
 
-END
+_END_
