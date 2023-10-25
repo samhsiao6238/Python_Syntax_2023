@@ -72,6 +72,8 @@
 <br>
 
 4. 使用 `dict.fromkeys()` 創建具有相同值的鍵值對
+   
+   - 當不提供value時，預設值是None。
 
     ```python
     keys = ['a', 'b', 'c']
@@ -87,7 +89,9 @@
 
 <br>
 
-5. 字典包容式 (dict comprehension) 創建
+5. 字典包容式 (dict comprehension) 創建，也稱 `字典解析` (Dictionary Comprehension)。
+    - 這是一種快速創建字典的方法
+   - 如果想創建一個將數字映射到其平方的字典，可以使用字典解析。
 
     ```python
     squares = {x: x*x for x in range(1, 6)}
@@ -109,14 +113,14 @@
 1. 新增元素
 
     ```python
-    my_dict = {}
+    my_dict = {'AAA': 'aaa', 'BBB': 'bbb', 'CCC': 'ccc'}
     my_dict['DDD'] = 'ddd'
     # 輸出
-    print(f"my_dict['DDD']: {my_dict['DDD']}")
+    print(my_dict)
     ```
     _結果_
     ```bash
-    my_dict['DDD']: ddd
+    {'AAA': 'aaa', 'BBB': 'bbb', 'CCC': 'ccc', 'DDD': 'ddd'}
     ```
     
 <br>
@@ -124,97 +128,87 @@
 2. 修改元素
 
     ```python
+    my_dict = {'AAA': 'aaa', 'BBB': 'bbb', 'CCC': 'ccc'}
     my_dict['AAA'] = 'AAA'
     # 輸出
-    print(f"my_dict['AAA']: {my_dict['AAA']}")
+    print(my_dict)
     ```
     _結果_
     ```bash
-    my_dict['AAA']: AAA
+    {'AAA': 'AAA', 'BBB': 'bbb', 'CCC': 'ccc'}
     ```
+
 
 <br>
 
-3. 字典解析 (Dictionary Comprehension)
-
-- 這是一種快速創建字典的方法
-- 如果想創建一個將數字映射到其平方的字典，可以使用字典解析。
-
-
-    ```python
-    # 字典解析式
-    # {key: value for 變數 in 迭代物件}
-    square_dict = {x: x*x for x in range(1, 6)}
-    print(square_dict)  # 輸出：{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-    ```
-    _結果_
-    ```bash
-    {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-    ```
-
-<br>
-
-4. get 取值
+3. get 取值
  
  
-   - 當不確定一個鍵是否存在於字典中時，可以使用 get 方法來取得該鍵的值。
-   - 如果鍵不存在，get 方法會傳回 None 或指定的默認值，而不會發生錯誤使系統崩潰，這是一種安全的方法。
+   - 當不確定一個鍵是否存在於字典中時，可以使用 `get` 方法來取得該鍵 `key` 對應的值 `value` 。
+   - 如果鍵不存在，get 方法會傳回 `None` 或 `指定的默認值`，而不會發生錯誤使系統崩潰，這是一種安全的方法。
 
 
     ```python
     # 初始化字典
     data = {"AAA": "aaa", "BBB": 333}
-    # 取出 address 這個 key 對應的值，預設 None 的時候返回的內容為'N/A'
+    # 有值的話直接傳出
+    print(data.get("AAA", "N/A"))      # 輸出：'aaa'
+    # 取出 key 對應的值，並且自訂取回為 None 的時候返回的值為'N/A'
     print(data.get("CCC", "N/A"))   # 'N/A'
-    # 若沒有預設值，會傳出 None
+    # 透過 get 取值不會增添字典成員
+    print(data)     # {'AAA': 'aaa', 'BBB': 333}
+    # 若沒有自訂空值的替代值，則會直接傳出 None
     print(data.get("DDD"))   # 'None'
     # None 的資料類型就是 None Type
     print(type(data.get("DDD"))) # <class 'NoneType'>
-    # 有值的話直接傳出
-    print(data.get("AAA", "N/A"))      # 輸出：'aaa'
     ```
     _結果_
     ```bash
+    aaa
     N/A
+    {'AAA': 'aaa', 'BBB': 333}
     None
     <class 'NoneType'>
-    aaa
     ```
 
 <br>
 
-5. setdefault 設定預設值
+4. setdefault 設定預設值
 
    - 使用 key 進行查詢，若有對應的 value 會回傳指定 key 的 value，如果該 key 不存在於字典中，則添加 key 並設定其值為默認值。
+   - 與 get 不同的是 get 取值不會因此增加成員，但 setdefault 會添加成員。
 
 
     ```python
     # 建立字典
     data = {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc'}
 
-    # 設定 address，並給定預設值
+    # 給定預設值
     data.setdefault("CCC", "N/A")
-    print(data)  # 輸出：{'name': 'John', 'age': 30, 'address': 'N/A'}
+    data.setdefault("DDD", "N/A")
+
+    # 因為 'CCC' 有值所以沒影響，但 'DDD' 沒有值所以會傳出自訂的 'N/A'
+    print(data)  # 輸出：{'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': 'N/A'}
     # 直接賦值
     data.setdefault("DDD", "123456789")
+    # 這時候再去自訂 'DDD' 空值處理值不會有影響，因為已經有值了
     print(data)
-    # 沒預設值，就是 None
+    # 自訂預設值時，只給定 Key 沒給 Value 時，一樣還是 None。
     data.setdefault("other")
     print(data)
     ```
     _結果_
     ```bash
-    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc'}
-    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': '123456789'}
-    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': '123456789', 'other': None}
+    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': 'N/A'}
+    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': 'N/A'}
+    {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': 'N/A', 'other': None}
     ```
 
 <br>
 
-6. update 更新字典
+5. update 更新字典
 
    - 更新字典的值或者添加新的 key-value
-
 
     ```python
     # 建立一個字典
@@ -223,7 +217,7 @@
     # 更新 BBB 並加入 DDD
     data.update({"BBB": 999, "DDD": "USA"})
     #
-    print(data)  # 輸出：{'name': 'John', 'age': 31, 'address': 'USA'}
+    print(data)  # 輸出：{'AAA': 'aaa', 'BBB': 999, 'CCC': 'ccc', 'DDD': 'USA'}
     ```
     _結果_
     ```bash
@@ -233,11 +227,11 @@
 
 <br>
 
-7. 遍歷字典
+6. 遍歷字典
    
    - 使用 keys()、values() 和 items() 方法分別返回字典的鍵、值和鍵值對。
 
-   - 回傳時輸出的「dict_keys」「dict_values」「dict_items」是 *視圖物件（view objects）* 的類型。
+   - 回傳時輸出的 `dict_keys`、`dict_values`、`dict_items` 是 `視圖物件（view objects）` 的類型。
 
 
     ```python
@@ -259,7 +253,7 @@
 
 <br>
 
-8. dict_keys
+7. dict_keys
 
    - 這個物件是一個包含字典所有鍵的視圖。
    - 可以用於迭代，支持成員檢查。
@@ -286,7 +280,7 @@
 
 <br>
 
-9. dict_values
+8. dict_values
 
    - 是一個包含字典所有值的視圖物件。
    - 可以用於迭代，並且也支持成員檢查。
@@ -310,7 +304,7 @@
 
 <br>
 
-10.  dict_items
+9.  dict_items
 
      - 這個物件是一個包含字典所有 (鍵, 值) 對的視圖。
      - 可以用於迭代。
@@ -338,7 +332,7 @@
 
 <br>
 
-11.   del 刪除字典中的元素
+10.   del 刪除字典中的元素
 
      - del 透過「key」進行索引刪除，會刪除整個鍵值對(key-value)
 
@@ -358,7 +352,7 @@
 
 <br>
 
-12.  取出 pop
+11.  取出 pop
 
     - 實質取出會刪除，
     - 與 del 除語法不同外，pop 有回傳值，del 沒有。
@@ -382,7 +376,7 @@
 
 <br>
 
-13.  使用 in 檢查鍵是否存在：這是檢查字典是否包含某個鍵的快速方法。
+12.  使用 in 檢查鍵是否存在：這是檢查字典是否包含某個鍵的快速方法。
 
 
     ```python
@@ -411,7 +405,7 @@
 
 <br>
 
-14. 字典視圖 view 
+13. 字典視圖 view 
  
     - 在 Python 中，當對一個字典調用 .values() 方法時，會得到一個 dict_values 物件。
     - 它是一個具有特殊行為的物件，不是完全獨立的數據類型。
@@ -446,7 +440,7 @@
 
 <br>
 
-15.  與 json 進行互相轉換
+14.  與 json 進行互相轉換
 
 
     ```python
@@ -472,7 +466,7 @@
 
 <br>
 
-16. update 更新
+15. update 更新
 
 
     ```python
