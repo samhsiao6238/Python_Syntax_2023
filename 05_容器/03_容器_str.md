@@ -104,27 +104,23 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     _跟置換相同，這並不會改變原本的內容_
 
     ```python
-    str_1.split('_')
-    ```
-    _輸出_
-    ```bash
-    ['Hello', '01']
-    ```
-
-    ```python
-    str_1
+    str_1 = 'Hello_01'
+    s_1 = str_1.split('_')
+    print(str_1)
+    print(s_1)
     ```
     _輸出_
     ```bash
     'Hello_01'
-    ```
+    ['Hello', '01']
+
 
 10. 搜尋並傳回下標（索引）
 
     ```python
     str_1.find('0')
     ```
-
+    _輸出_
     ```bash
     6
     ```
@@ -134,7 +130,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     ```python
     str_1.strip()
     ```
-
+    _輸出_
     ```bash
     'Hello_01'
     ```
@@ -150,7 +146,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     # 將「_」插入「Hello」字串中
     str_5.join(str_4)
     ```
-
+    _輸出_
     ```bash
     'H_e_l_l_o'
     ```
@@ -165,15 +161,15 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     print(type(str_4_1))
     str_4_1
     ```
-
+    _輸出_
     ```bash
     <class 'str'>
     '1、 2、 3、 4、 5'
     ```
 
-*特別注意*
+    _特別注意_
 
-*也可以使用「join」串接 list，串接之後會轉型為字串，也就是逐一取出串接為字串*
+    _也可以使用「join」串接 list，串接之後會轉型為字串，也就是逐一取出串接為字串_
 
     ```python
     # 用全形頓號將['1', '2', '3', '4', '5']串起來
@@ -184,7 +180,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     print(type(str_4_2))
     str_4_2
     ```
-
+    _輸出_
     ```bash
     <class 'list'>
     <class 'str'>
@@ -192,7 +188,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     '1、 2、 3、 4、 5'
     ```
 
-1.  字串的長度
+13. 字串的長度
 
     ```python
     str_1.replace('、', '')
@@ -200,7 +196,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     # 長度
     len(str_1)
     ```
-
+    _輸出_
     ```bash
     Hello_01
 
@@ -215,7 +211,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     for i in str_1:
         print(i)
     ```
-
+    _輸出_
     ```bash
     H
     e
@@ -234,7 +230,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
         print(i)
     len(str_4_2)
     ```
-
+    _輸出_
     ```bash
     1
     、
