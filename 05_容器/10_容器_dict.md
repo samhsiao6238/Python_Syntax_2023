@@ -114,6 +114,7 @@
     # 輸出
     print(f"my_dict['DDD']: {my_dict['DDD']}")
     ```
+    _結果_
     ```bash
     my_dict['DDD']: ddd
     ```
@@ -127,7 +128,7 @@
     # 輸出
     print(f"my_dict['AAA']: {my_dict['AAA']}")
     ```
-
+    _結果_
     ```bash
     my_dict['AAA']: AAA
     ```
@@ -146,7 +147,7 @@
     square_dict = {x: x*x for x in range(1, 6)}
     print(square_dict)  # 輸出：{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
     ```
-
+    _結果_
     ```bash
     {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
     ```
@@ -172,7 +173,7 @@
     # 有值的話直接傳出
     print(data.get("AAA", "N/A"))      # 輸出：'aaa'
     ```
-
+    _結果_
     ```bash
     N/A
     None
@@ -182,9 +183,9 @@
 
 <br>
 
-1. setdefault 設定預設值
+5. setdefault 設定預設值
 
-- 使用 key 進行查詢，若有對應的 value 會回傳指定 key 的 value，如果該 key 不存在於字典中，則添加 key 並設定其值為默認值。
+   - 使用 key 進行查詢，若有對應的 value 會回傳指定 key 的 value，如果該 key 不存在於字典中，則添加 key 並設定其值為默認值。
 
 
     ```python
@@ -201,7 +202,7 @@
     data.setdefault("other")
     print(data)
     ```
-
+    _結果_
     ```bash
     {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc'}
     {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc', 'DDD': '123456789'}
@@ -212,7 +213,7 @@
 
 6. update 更新字典
 
-- 更新字典的值或者添加新的 key-value
+   - 更新字典的值或者添加新的 key-value
 
 
     ```python
@@ -224,7 +225,7 @@
     #
     print(data)  # 輸出：{'name': 'John', 'age': 31, 'address': 'USA'}
     ```
-
+    _結果_
     ```bash
     {'AAA': 'aaa', 'BBB': 777, 'CCC': 'ccc'}
     {'AAA': 'aaa', 'BBB': 999, 'CCC': 'ccc', 'DDD': 'USA'}
@@ -234,9 +235,9 @@
 
 7. 遍歷字典
    
-- 使用 keys()、values() 和 items() 方法分別返回字典的鍵、值和鍵值對。
+   - 使用 keys()、values() 和 items() 方法分別返回字典的鍵、值和鍵值對。
 
-- 回傳時輸出的「dict_keys」「dict_values」「dict_items」是 *視圖物件（view objects）* 的類型。
+   - 回傳時輸出的「dict_keys」「dict_values」「dict_items」是 *視圖物件（view objects）* 的類型。
 
 
     ```python
@@ -249,7 +250,7 @@
     # 取出 key-value
     print(type(data.items()), data.items()) 
     ```
-
+    _結果_
     ```bash
     <class 'dict_keys'> dict_keys(['AAA', 'BBB', 'CCC'])
     <class 'dict_values'> dict_values(['aaa', 777, 'ccc'])
@@ -260,9 +261,9 @@
 
 8. dict_keys
 
-- 這個物件是一個包含字典所有鍵的視圖。
-- 可以用於迭代，支持成員檢查。
-- 支持集合操作，例如 union、intersection 和 difference。
+   - 這個物件是一個包含字典所有鍵的視圖。
+   - 可以用於迭代，支持成員檢查。
+   - 支持集合操作，例如 union、intersection 和 difference。
 
 
     ```python
@@ -275,8 +276,8 @@
     print('a' in keys)  # True
     # 集合運算
     print(keys & {'b', 'c', 'd'})  # {'b', 'c'}
-    ```
-
+    ``` 
+    _結果_
     ```bash
     <class 'dict_keys'>
     True
@@ -287,9 +288,9 @@
 
 9. dict_values
 
-- 是一個包含字典所有值的視圖物件。
-- 可以用於迭代，並且也支持成員檢查。
-- 但由於字典的值不需要是唯一的，所以不支援集合操作。
+   - 是一個包含字典所有值的視圖物件。
+   - 可以用於迭代，並且也支持成員檢查。
+   - 但由於字典的值不需要是唯一的，所以不支援集合操作。
 
 
     ```python
@@ -301,7 +302,7 @@
     # 透過「in」做成員檢查
     print(1 in values)  # True
     ```
-
+    _結果_
     ```bash
     <class 'dict_values'>
     True
@@ -309,12 +310,12 @@
 
 <br>
 
-10. dict_items
+10.  dict_items
 
-- 這個物件是一個包含字典所有 (鍵, 值) 對的視圖。
-- 可以用於迭代。
-- 支持成員檢查。
-- 支持集合操作。
+     - 這個物件是一個包含字典所有 (鍵, 值) 對的視圖。
+     - 可以用於迭代。
+     - 支持成員檢查。
+     - 支持集合操作。
 
 
     ```python
@@ -328,7 +329,7 @@
     print(('a', 1) in items)  # True
     print(('a', 2) in items)  # False
     ```
-
+    _結果_
     ```bash
     <class 'dict_items'>
     True
@@ -337,9 +338,9 @@
 
 <br>
 
-11.  del 刪除字典中的元素
+11.   del 刪除字典中的元素
 
-- del 透過「key」進行索引刪除，會刪除整個鍵值對(key-value)
+     - del 透過「key」進行索引刪除，會刪除整個鍵值對(key-value)
 
 
     ```python
@@ -350,17 +351,17 @@
     # 查看
     print(data)  # 輸出：{'age': 30}
     ```
-
+    _結果_
     ```bash
     {'age': 30}
     ```
 
 <br>
 
-12. 取出 pop
+12.  取出 pop
 
-- 實質取出會刪除，
-- 與 del 除語法不同外，pop 有回傳值，del 沒有。
+    - 實質取出會刪除，
+    - 與 del 除語法不同外，pop 有回傳值，del 沒有。
 
 
     ```python
@@ -373,7 +374,7 @@
     # 查看剩下的值
     print(data)   # 輸出：{'BBB': 100}
     ```
-
+    _結果_
     ```bash
     aaa
     {'BBB': 100}
@@ -381,7 +382,7 @@
 
 <br>
 
-13. 使用 in 檢查鍵是否存在：這是檢查字典是否包含某個鍵的快速方法。
+13.  使用 in 檢查鍵是否存在：這是檢查字典是否包含某個鍵的快速方法。
 
 
     ```python
@@ -398,7 +399,7 @@
     print(_val)
     print(25 in data.values())  # 輸出：False
     ```
-
+    _結果_
     ```bash
     True
     False
@@ -412,9 +413,9 @@
 
 14. 字典視圖 view 
  
-- 在 Python 中，當對一個字典調用 .values() 方法時，會得到一個 dict_values 物件。
-- 它是一個具有特殊行為的物件，不是完全獨立的數據類型。
-- 這個視圖（view）物件提供了字典值的動態視圖反映即時狀態，如果字典的內容變化，視圖物件也會即時地變化。
+    - 在 Python 中，當對一個字典調用 .values() 方法時，會得到一個 dict_values 物件。
+    - 它是一個具有特殊行為的物件，不是完全獨立的數據類型。
+    - 這個視圖（view）物件提供了字典值的動態視圖反映即時狀態，如果字典的內容變化，視圖物件也會即時地變化。
 
 
     ```python
@@ -436,7 +437,7 @@
     # 輸出
     print(type(val), ' : ', val)
     ```
-
+    _結果_
     ```bash
     ['aaa', 'bbb', 'ccc', 'ddd']
     ('aaa', 'bbb', 'ccc', 'ddd')
@@ -445,7 +446,7 @@
 
 <br>
 
-15. 與 json 進行互相轉換
+15.  與 json 進行互相轉換
 
 
     ```python
@@ -463,7 +464,7 @@
     my_dict_again = json.loads(my_json)
     print(my_dict_again)
     ```
-
+    _結果_
     ```bash
     {"name": "Alice", "age": 25}
     {'name': 'Alice', 'age': 25}
@@ -500,7 +501,7 @@
     my_dict.update(JJJ='jjj', KKK='kkk')
     print(my_dict) 
     ```
-
+    _結果_
     ```bash
     {'AAA': 'aaa', 'BBB': 'bbb', 'CCC': 'ccc'}
     {'AAA': 'aaa', 'BBB': 'BBB', 'CCC': 'CCC'}
