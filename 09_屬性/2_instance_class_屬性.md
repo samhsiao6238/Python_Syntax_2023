@@ -38,7 +38,7 @@
 
 ### Class Attributes 類的屬性
    
-    _也稱為 Static Attributes 或 Type Attributes_
+_也稱為 Static Attributes 或 Type Attributes_
 
 <br>
 
