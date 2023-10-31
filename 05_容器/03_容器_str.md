@@ -405,6 +405,8 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
 
 16.  與 ASCII 的轉換
 
+- 基本範例
+
     ```python
     ascii_val = ord('A')  # 65
     char_from_ascii = chr(65)  # 'A'
