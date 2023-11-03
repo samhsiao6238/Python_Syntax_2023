@@ -2,7 +2,12 @@ _進階_
 
 # 魔法方法 `__call__`
 
-`__call__` 是一個魔法方法，允許一個類的物件像函數一樣被調用，當一個物件被像函數一樣調用時，Python 會自動調用這個物件的 `__call__` 方法。
+
+## 說明
+
+1. `__call__` 是一個魔法方法，允許一個類的物件像函數一樣被調用，當一個物件被像函數一樣調用時，Python 會自動調用這個物件的 `__call__` 方法。
+2. 不是每個物件都內建了 `__call__` 方法，只有當一個物件是 `可呼叫的（callable）` ，該物件才具有`__call__` 方法。
+3. 一個類別只能定義一個 `__call__` 方法，這與其他特殊方法如 `__init__` 的行為相同。
 
 
 <br>
@@ -11,14 +16,21 @@ _進階_
 
 ```python
 class MyClass:
-    def __call__(self, *args, kwargs):
+    def __call__(self, *args, **kwargs):
         # 方法內容
         pass
+
+#
+instance = MyClass()
+instance()  # 這會輸出 "Instance called!"
+#
+print(callable(instance))  # True
+print(callable(MyClass))   # True, 因為類別本身也是可呼叫的
 ```
 
 - `self`: 物件自己。
 - `*args`: 一個用來接收任意數量的位置參數的元組。
-- `kwargs`: 一個用來接收任意數量的關鍵字參數的字典。
+- `**kwargs`: 一個用來接收任意數量的關鍵字參數的字典。
 
 <br>
 
