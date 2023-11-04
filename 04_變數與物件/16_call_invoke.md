@@ -33,6 +33,8 @@
     Hello, Alice!
     ```
 
+<br>
+
 2. 可呼叫物件 (callable)
 
     Python 通過 `callable` 內建函數提供了一種機制，用於判斷某個物件是否可以像函數那樣被呼叫。當物件實作了 `__call__` 魔術方法時，該物件成為可呼叫物件。
@@ -55,9 +57,11 @@
     5
     ```
 
+<br>
+
 3. 呼叫過程描述 (Call Description)
 
-    呼叫過程在 Python 中指的是使用函數名稱，隨後附上一組包含參數的圓括號，從而觸發該函數執行的具體操作。這個過程是同步的，意味著函數將按照提供的參數進行操作，直到返回結果。
+    呼叫過程在 Python 中指的是使用函數名稱，隨後附上一組包含參數的圓括號，從而觸發該函數執行的具體操作。這個過程是同步的，也就是函數將按照提供的參數進行操作，直到返回結果。
 
     ```python
     def sum(a, b):
@@ -90,21 +94,21 @@
 
 1. 反射（Reflection）: 在 Python 中可通過 `getattr` 或 `__getattribute__` 這樣的函數動態地獲取對象的屬性或方法，並通過 `()` 來調用它們，這就是一種 `invoke` 的操作。
 
-```python
-class Example:
-    # 定義一個方法
-    def say_hello(self):
-        print("Hello!")
+    ```python
+    class Example:
+        # 定義一個方法
+        def say_hello(self):
+            print("Hello!")
 
-obj = Example()
-method = getattr(obj, 'say_hello')
-# 通過反射機制來調用 say_hello 方法
-method()
-```
-_OUTPUT_
-```bash
-Hello!
-```
+    obj = Example()
+    method = getattr(obj, 'say_hello')
+    # 通過反射機制來調用 say_hello 方法
+    method()
+    ```
+    _OUTPUT_
+    ```bash
+    Hello!
+    ```
 
 <br>
 
@@ -112,40 +116,40 @@ Hello!
    
    _在很多框架或庫中，我們會註冊一些回調函數來響應特定的事件，這些回調函數的調用通常是通過框架的內部機制來實現的，這就是一種 `invoke` 的操作。_
 
-```python
-def on_click(event):
-    print("Button clicked!")
+    ```python
+    def on_click(event):
+        print("Button clicked!")
 
-# 假設有一個 GUI 框架，我們註冊 on_click 函數來響應按鈕點擊事件
-# button.register_click_event(on_click)
-```
+    # 假設有一個 GUI 框架，我們註冊 on_click 函數來響應按鈕點擊事件
+    # button.register_click_event(on_click)
+    ```
 
 3. 通過字符串來調用函數
    
    _在一些動態語言或腳本語言中，有時候會根據字符串來動態地調用函數，這在 Python 中也可以通過反射來實現。_
 
-```python
-# 定義函數，輸出訊息
-def print_something():
-    print("呼叫 print_something 函數")
+    ```python
+    # 定義函數，輸出訊息
+    def print_something():
+        print("呼叫 print_something 函數")
 
-# 建立一個字串
-function_name = "print_something"
+    # 建立一個字串
+    function_name = "print_something"
 
-# 通過 globals()[function_name] 獲取 print_something 函數對象。
-# globals() 返回一個字典，這個字典包含了當前模塊的全局變量。
-# 在這個字典中，'print_something' 是函數 print_something 的名稱
-# 所以 globals()['print_something'] 返回 print_something 函數對象。
-# () 是函數調用操作符，它會調用函數對象。
-# 所以這行代碼最終調用了 print_something 函數，並且執行函數內部的代碼。
-globals()[function_name]()
-```
-_OUTPUT_
-```python
-呼叫 print_something 函數
-```
+    # 通過 globals()[function_name] 獲取 print_something 函數對象。
+    # globals() 返回一個字典，這個字典包含了當前模塊的全局變量。
+    # 在這個字典中，'print_something' 是函數 print_something 的名稱
+    # 所以 globals()['print_something'] 返回 print_something 函數對象。
+    # () 是函數調用操作符，它會調用函數對象。
+    # 所以這行代碼最終調用了 print_something 函數，並且執行函數內部的代碼。
+    globals()[function_name]()
+    ```
+    _OUTPUT_
+    ```python
+    呼叫 print_something 函數
+    ```
 
-_這範例所要展示的就是 `invoke` 的機制，是一種更為動態和靈活的調用過程，這種調用可能涉及到一些間接性或額外的機制，也是為什麼 `invoke` 描述起來比較抽象的原因。_
+    _這範例所要展示的就是 `invoke` 的機制，是一種更為動態和靈活的調用過程，這種調用可能涉及到一些間接性或額外的機制，也是為什麼 `invoke` 描述起來比較抽象的原因。_
 
 
 <br>
