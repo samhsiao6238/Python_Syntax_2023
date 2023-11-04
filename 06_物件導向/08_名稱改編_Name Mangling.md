@@ -57,32 +57,32 @@ derived = Derived()
 
 <br>
 
-_父類物件調用自己的函數_
+1. _父類物件調用自己的函數_
 
-```python
-base.show() 
-```
+    ```python
+    base.show() 
+    ```
 
-_OUTPUT_
+    _OUTPUT_
 
-```bash
-這是父類私有屬性
-```
+    ```bash
+    這是父類私有屬性
+    ```
 
 <br>
 
-_子類物件調用自己的函數，無法使用父類的屬性名稱直接訪問，但依舊可以訪問_
+2. _子類物件調用自己的函數，無法使用父類的屬性名稱直接訪問，但依舊可以訪問_
 
-```python
-derived.display() 
-```
+    ```python
+    derived.display() 
+    ```
 
-_OUTPUT_
+    _OUTPUT_
 
-```bash
-這是子類私有屬性
-這是父類私有屬性
-```
+    ```bash
+    這是子類私有屬性
+    這是父類私有屬性
+    ```
 
 <br>
 
@@ -107,27 +107,27 @@ class Derived(Base):
         print(self.shared_var)
 ```
 
-_實作_
+1. _實作_
 
-```python
-# 建立父類與子類物件
-base = Base()
-derived = Derived()
-# 調用父類方法
-base.show() 
-# 子類調用父類方法
-derived.show()
-# 子類調用自己的方法
-derived.display()
-```
+    ```python
+    # 建立父類與子類物件
+    base = Base()
+    derived = Derived()
+    # 調用父類方法
+    base.show() 
+    # 子類調用父類方法
+    derived.show()
+    # 子類調用自己的方法
+    derived.display()
+    ```
 
-_OUTPUT_
+    _OUTPUT_
 
-```bash
-這是父類的屬性
-這是子類的屬性
-這是子類的屬性
-```
+    ```bash
+    這是父類的屬性
+    這是子類的屬性
+    這是子類的屬性
+    ```
 
 <br>
 
