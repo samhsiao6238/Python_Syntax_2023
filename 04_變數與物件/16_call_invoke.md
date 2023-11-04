@@ -14,6 +14,70 @@
 2. Python 中的 `callable` 概念和 `__call__` 方法直接和呼叫過程有關。如果一個對象定義了 `__call__` 方法，那麼它就是可呼叫的。
 3. `Call` 描述的是一個比較具體和直接的操作，通常是指直接通過函數名和參數列表來執行函數。
 
+
+
+### 函數與方法的呼叫過程
+
+1. 函數呼叫 (Call)
+
+    為稱為函數呼叫。
+
+    ```python
+    def greet(name):
+        return f"Hello, {name}!"
+
+    # 函數呼叫
+    message = greet("Alice")
+    print(message)
+    ```
+
+    _結果_:
+
+    ```bash
+    Hello, Alice!
+    ```
+
+2. 可呼叫物件 (callable)
+
+    Python 通過 `callable` 內建函數提供了一種機制，用於判斷某個物件是否可以像函數那樣被呼叫。當物件實作了 `__call__` 魔術方法時，該物件成為可呼叫物件。
+
+    ```python
+    class Adder:
+        def __call__(self, x, y):
+            return x + y
+
+    # 實例化類別以創建可呼叫物件
+    add = Adder()
+    print(callable(add))  # 判斷物件是否可呼叫
+    print(add(2, 3))      # 呼叫物件
+    ```
+
+    _結果_:
+
+    ```bash
+    True
+    5
+    ```
+
+3. 呼叫過程描述 (Call Description)
+
+    呼叫過程在 Python 中指的是使用函數名稱，隨後附上一組包含參數的圓括號，從而觸發該函數執行的具體操作。這個過程是同步的，意味著函數將按照提供的參數進行操作，直到返回結果。
+
+    ```python
+    def sum(a, b):
+        return a + b
+
+    # 呼叫函數
+    result = sum(1, 2)
+    print(result)
+    ```
+
+    _結果_:
+
+    ```bash
+    3
+    ```
+
 <br>
 
 ## Invoke
