@@ -2,63 +2,80 @@ _進階_
 
 # 魔法方法 `__call__`
 
+<br>
 
 ## 說明
 
 1. `__call__` 是一個魔法方法，允許一個類的物件像函數一樣被調用，當一個物件被像函數一樣調用時，Python 會自動調用這個物件的 `__call__` 方法。
+
 2. 不是每個物件都內建了 `__call__` 方法，只有當一個物件是 `可呼叫的（callable）` ，該物件才具有`__call__` 方法。
+
 3. 一個類別只能定義一個 `__call__` 方法，這與其他特殊方法如 `__init__` 的行為相同。
 
 
 <br>
 
-## 定義
+## 範例
 
-```python
-class MyClass:
-    def __call__(self, *args, **kwargs):
-        # 方法內容
-        pass
+1. 基本定義
 
-#
-instance = MyClass()
-instance()  # 這會輸出 "Instance called!"
-#
-print(callable(instance))  # True
-print(callable(MyClass))   # True, 因為類別本身也是可呼叫的
-```
 
-- `self`: 物件自己。
-- `*args`: 一個用來接收任意數量的位置參數的元組。
-- `**kwargs`: 一個用來接收任意數量的關鍵字參數的字典。
+   - `self`: 物件自己。
+   - `*args`: 一個用來接收任意數量的位置參數的元組。
+   - `**kwargs`: 一個用來接收任意數量的關鍵字參數的字典。
+
+    ```python
+    class MyClass:
+        def __call__(self, *args, **kwargs):
+            # 方法內容
+            pass
+
+    #
+    instance = MyClass()
+    instance()  # 這會輸出 "Instance called!"
+    #
+    print(callable(instance))  # True
+    print(callable(MyClass))   # True, 因為類別本身也是可呼叫的
+    ```
+    _結果_
+    ```bash
+    True
+    True
+    ```
 
 <br>
 
-## 使用案例
+2. 使用案例
+   
+   _在這個例子中，`Adder` 類的實例 `add` 被像函數一樣調用，這會觸發 `__call__` 方法的執行，並返回兩個數字的和。_
 
-```python
-class Adder:
-    def __call__(self, x, y):
-        return x + y
+    ```python
+    class Adder:
+        def __call__(self, x, y):
+            return x + y
 
-add = Adder()
-result = add(1, 2)  # 調用 __call__ 方法
-print(result)  # 輸出: 3
-```
+    add = Adder()
+    result = add(1, 2)  # 調用 __call__ 方法
+    print(result)  # 輸出: 3
+    ```
+    _結果_
+    ```bash
+    3
+    ```
 
-在這個例子中，`Adder` 類的實例 `add` 被像函數一樣調用，這會觸發 `__call__` 方法的執行，並返回兩個數字的和。
+
 
 <br>
 
 ## 特殊用法與效應
 
-1. 將物件用作函數: 這是 `__call__` 最直接的用途，它允許物件像函數一樣被調用，這使得可以創建可調用的物件，而不是只有函數和方法是可調用的。
+1. 將物件作為函數調用：這是 `__call__` 最直接的用途，將物件像函數一樣調用使得可以創建可調用的物件，而不是只有函數和方法是可調用的。
 
-2. 創建函數物件: 可以創建封裝了特定邏輯或狀態的函數物件，這對於創建有狀態的回調函數或裝飾器非常有用。
+2. 創建函數物件：可以創建封裝了特定邏輯或狀態的函數物件，這對於創建有狀態的回調函數或裝飾器非常有用。
 
-3. 實現函數式編程概念: `__call__` 方法使得可以實現像閉包或者高階函數這樣的函數式編程概念。
+3. 實現函數式編程概念：`__call__` 方法使得可以實現像閉包或者高階函數這樣的函數式編程概念。
 
-4. 簡化 API: 通過使物件可調用，你可以為使用者提供一個更簡潔、更直觀的 API。
+4. 簡化 API：通過使物件可調用，可以為使用者提供一個更簡潔、更直觀的 API。
 
 <br>
 
