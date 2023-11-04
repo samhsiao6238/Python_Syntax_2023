@@ -2,7 +2,7 @@
 
 <br>
 
-1. 使用 f-string（在Python 3.6以上的版本可用）
+1. 使用 `f-string`（在Python 3.6以上的版本可用）
 
 
     ```python
@@ -15,7 +15,7 @@
 
 <br>
 
-1. 使用.format()
+2. 使用 `.format()`
 
 
     ```python
