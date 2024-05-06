@@ -4,11 +4,11 @@
 
 ## 說明
 
-1. 在 Python 的 `collections.abc` 和 `typing` 模組中，`Callable` 是用於標註可呼叫物件的類型，如函數或具有 `__call__` 方法的類實例，這個標註可以明確指定函數的參數類型和返回值類型，以增進程式碼的可讀性和確保類型安全。
+1. 在 Python 的 `collections.abc` 和 `typing` 模組中，`Callable` 是用於標註 `可呼叫物件的類型`，如函數或具有 `__call__` 方法的類實例就是 `可呼叫物件的類型`；這個標註可以明確指定函數的參數類型和返回值類型，以增進程式碼的可讀性和確保類型安全。
 
 <br>
 
-2. `Callable` 類型標註是 Python `類型提示系統` 的一部分，用於提高代碼的清晰性和安全性，並從 Python 3.10 版本起，`Callable` 支援使用 `ParamSpec` 和 `Concatenate` 進行更複雜的參數處理，這些新增功能為開發者提供了更多靈活性和精確性。
+2. `Callable` 類型標註是 Python `類型提示系統` 的一部分，並從 Python 3.10 版本起，`Callable` 支援使用 `ParamSpec` 和 `Concatenate` 進行更複雜的參數處理。
 
 <br>
 
