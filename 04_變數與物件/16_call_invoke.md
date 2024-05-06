@@ -139,11 +139,11 @@
     function_name = "print_something"
 
     # 通過 globals()[function_name] 獲取 print_something 函數對象。
-    # globals() 返回一個字典，這個字典包含了當前模塊的全局變量。
+    # globals() 返回一個字典，這個字典包含了當前模組的全局變量。
     # 在這個字典中，'print_something' 是函數 print_something 的名稱
     # 所以 globals()['print_something'] 返回 print_something 函數對象。
     # () 是函數調用操作符，它會調用函數對象。
-    # 所以這行代碼最終調用了 print_something 函數，並且執行函數內部的代碼。
+    # 所以這行程式碼最終調用了 print_something 函數，並且執行函數內部的程式碼。
     globals()[function_name]()
     ```
     _OUTPUT_
