@@ -6,7 +6,7 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 ## 說明
 
-1. `match` 是 Python 3.10 引入的結構化的模式匹配，假如使用之前版本的核心，會出現以下訊息。
+1. `match` 是 Python 3.10 引入的 _結構化模式匹配_，假如使用 `3.10` 以前的版本，會出現以下 `SyntaxError` 訊息。
 
     ![](images/img_05.png)
 
@@ -66,7 +66,7 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
             # _ 作為萬用字元，匹配任何未被前面 case 匹配的情況。
             case _:
                 return "Something's wrong with the internet"
-    #
+    # 調用函數
     http_error(404)
     ```
     _結果_
@@ -76,7 +76,11 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
-2. 解構賦值：解構元組和列表，並可以將值綁定到變量，每個 case 可以解構 point 的值，並根據其內容選擇不同的執行路徑。
+_以下 2、3、4 點使用了類似的範例，但在數據的定義上略有不同。_
+
+<br>
+
+2. 解構賦值：解構數組和列表，並可以將值綁定到變量；在以下範例中，每個 case 可以解構 point 的值，並根據其內容選擇不同的執行路徑。
 
     ```python
     point = (1, 2)
@@ -100,56 +104,7 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
-3. 解構數組。
-
-    ```python
-    from dataclasses import dataclass
-
-    @dataclass
-    class Point:
-        x: int
-        y: int
-
-    def process_point(point):
-        match point:
-            case Point(x=0, y=0):
-                print("Origin")
-            case Point(x=0, y=y):
-                print(f"Y-axis at {y}")
-            case Point(x=x, y=0):
-                print(f"X-axis at {x}")
-            case Point():
-                print(f"Point at ({point.x}, {point.y})")
-            case _:
-                print("Not a point")
-
-    #
-    p1 = Point(0, 0)
-    process_point(p1)
-
-    #
-    p2 = Point(0, 5)
-    process_point(p2)
-
-    #
-    p3 = Point(7, 0)
-    process_point(p3)
-
-    #
-    p4 = Point(3, 4)
-    process_point(p4)
-    ```
-    _結果_
-    ```bash
-    Origin
-    Y-axis at 5
-    X-axis at 7
-    Point at (3, 4)
-    ```
-
-<br>
-
-4. 類模式匹配。
+3. 類模式匹配：手動定義了初始化方法，如此可以在初始化時加入更多的邏輯處理。
 
     ```python
     class Point:
@@ -195,6 +150,56 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
+4. 解構數組：使用 Python 的 dataclasses 模組來定義 Point 類，這可以自動為類提供初始化方法、__repr__ 方法等，進而簡潔了語句，這種定義方式適合用於存儲數據並且不需要額外方法的簡單類。
+
+    ```python
+    from dataclasses import dataclass
+
+    @dataclass
+    class Point:
+        x: int
+        y: int
+
+    def process_point(point):
+        match point:
+            case Point(x=0, y=0):
+                print("Origin")
+            case Point(x=0, y=y):
+                print(f"Y-axis at {y}")
+            case Point(x=x, y=0):
+                print(f"X-axis at {x}")
+            case Point():
+                print(f"Point at ({point.x}, {point.y})")
+            case _:
+                print("Not a point")
+
+    '''建立物件並調用函數'''
+    # 物件一
+    p1 = Point(0, 0)
+    process_point(p1)
+
+    # 物件二
+    p2 = Point(0, 5)
+    process_point(p2)
+
+    # 物件三
+    p3 = Point(7, 0)
+    process_point(p3)
+
+    # 物件四
+    p4 = Point(3, 4)
+    process_point(p4)
+    ```
+    _結果_
+    ```bash
+    Origin
+    Y-axis at 5
+    X-axis at 7
+    Point at (3, 4)
+    ```
+
+<br>
+
 5. 使用守衛 `guard`：是在 match 語句中透過 if 條件來進一步限制模式匹配的一個進階用法。 守衛可以讓你在滿足基本模式匹配的基礎上，添加額外的條件判斷，只有當這些條件也被滿足時，才執行對應的程式碼區塊。。
 
     ```python
@@ -227,7 +232,7 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
-5. 匹配類型。
+6. 匹配類型。
 
     ```python
     def process(value):
@@ -260,7 +265,7 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
-7. `match` 搭配使用 `|`：在 Python 的 match 語句中，使用 |（"or"）符號允許在單一 case 語句中組合多個字面值。 這種用法實質上是一種模式匹配的簡寫，允許一個 case 分支匹配多個可能的值。
+7. `match` 搭配使用 `|`：在 Python 的 match 語句中，使用 `|` 符號可表示 `or`，允許在單一 case 語句中組合多個字面值，這種用法實質上是一種模式匹配的簡寫，允許一個 case 分支匹配多個可能的值。
 
     ```python
     def check_status(code):
