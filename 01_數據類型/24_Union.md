@@ -56,7 +56,7 @@ _typing.Union_
         if isinstance(value, int):
             # 如果是 int，則將其轉換為 float 並返回
             return float(value)
-        # 如果不是 int，則返回一個字符串 "Not a number"
+        # 如果不是 int，則返回一個字串 "Not a number"
         return "Not a number"
 
     # 使用 Python 3.10+ 推薦的簡寫方式
@@ -65,7 +65,7 @@ _typing.Union_
         if isinstance(value, int):
             # 如果是 int，則將其轉換為 float 並返回
             return float(value)
-            # 如果不是 int，則返回一個字符串 "Not a number"
+            # 如果不是 int，則返回一個字串 "Not a number"
         return "Not a number"
 
     # 呼叫函數

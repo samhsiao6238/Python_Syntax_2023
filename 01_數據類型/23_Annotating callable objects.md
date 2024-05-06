@@ -22,7 +22,7 @@ _`Callable` 類型標註是 Python 靜態類型檢查系統的一個強大工具
     from typing import Callable
 
     def process_data(func: Callable[[int], str]) -> None:
-        result = func(10)  # 假設這個函數將整數轉換為字符串
+        result = func(10)  # 假設這個函數將整數轉換為字串
         print(result)
 
     def number_to_str(n: int) -> str:
@@ -33,7 +33,7 @@ _`Callable` 類型標註是 Python 靜態類型檢查系統的一個強大工具
 
 <br>
 
-2. **使用可變參數和關鍵字參數的 Protocol**：這裡，`Combiner` 定義了一個 Protocol，它期望一個接受多個字符串並返回一個字符串的函數。`concat_elements` 是一個符合這個協定的函數。
+2. **使用可變參數和關鍵字參數的 Protocol**：這裡，`Combiner` 定義了一個 Protocol，它期望一個接受多個字串並返回一個字串的函數。`concat_elements` 是一個符合這個協定的函數。
 
     ```python
     from typing import Protocol, runtime_checkable
