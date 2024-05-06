@@ -260,6 +260,28 @@ _可參考官方文件中 [Control Flow Tools](https://docs.python.org/3/tutoria
 
 <br>
 
+7. `match` 搭配使用 `|`：在 Python 的 match 語句中，使用 |（"or"）符號允許在單一 case 語句中組合多個字面值。 這種用法實質上是一種模式匹配的簡寫，允許一個 case 分支匹配多個可能的值。
+
+    ```python
+    def check_status(code):
+        match code:
+            case 401 | 403 | 404:
+                return "Not allowed"
+            case 200:
+                return "OK"
+            case _:
+                return "Unknown code"
+
+    #
+    check_status(403)
+    ```
+    _結果_
+    ```bash
+    'Not allowed'
+    ```
+
+<br>
+
 ___
 
 _END_
