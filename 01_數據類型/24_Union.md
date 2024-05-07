@@ -47,6 +47,8 @@ _typing.Union_
 
 ## 應用範例
 
+1. 程式碼。
+
     ```python
     from typing import Union
 
