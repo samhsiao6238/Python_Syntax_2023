@@ -1,16 +1,16 @@
 # Walrus 運算子 
 
-_`:=`，Assignment Expressions_
+_`:=`，Assignment Expressions，海象運算子_
 
 <br>
 
 ## 說明
 
-1. `Python 3.8` 引入了 `Walrus 運算子`，官方稱為 `Assignment Expressions`，表示法為 `:=`，是一個新的語法特性。
+1. `Python 3.8` 引入了 `Walrus 運算子`，官方稱為 `Assignment Expressions`，中文翻譯為 `海象運算子`，表示法為 `:=`，是一個新的語法特性。
 
 <br>
 
-2. 可在條件表達式內部執行賦值運算，這對於在條件表達式中避免重複計算特別有用。
+2. 可在條件表達式內部執行賦值運算並傳出賦值結果，這對於在條件表達式中避免重複計算特別有用。
 
 <br>
 
@@ -40,6 +40,17 @@ _`:=`，Assignment Expressions_
      if (n := next((x for x in numbers if x > 0), None)) is not None:
           squared = n ** 2
      print(squared)
+     ```
+
+<br>
+
+3. 程式碼：在 `Streamlit` 中時常用到建立一個文字輸入框，並且捕獲用戶的輸入，假如用戶輸入非空格，函數便會傳輸出入的內容，並賦值給指定的變數。 
+
+     ```python
+     # `What is up?` 是指輸入框的預設文字，傳出的值是用戶的輸入
+     if prompt := st.chat_input("What is up?"):
+     write_message("user", prompt)
+     handle_submit(prompt)
      ```
 
 <br>
