@@ -18,10 +18,6 @@
 
 1. 在 Jupyter 的 Markdown 單元中繪製表格可以直接使用 Markdown 語法。
 
-<br>
-
-2. 範例。
-
     ```bash
     | 頭部1  | 頭部2  |
     |-------|--------|
@@ -46,17 +42,7 @@
 1. 範例。
 
     ```bash
-    [連結 Google](https://www.google.com/)
-    ```
-
-<br>
-
-## 插入程式碼塊
-
-1. 範例。
-
-    ```python
-    print('Hello, World!')
+    [Google](https://www.google.com/)
     ```
 
 <br>
@@ -236,13 +222,11 @@
 
 1. 在代碼的上下行分別使用三個反引號 `` ``` ``。
 
-    ```python
-    print('Hello World ~')
-    ```
+    ![](images/img_02.png)
 
 <br>
 
-2. `Markdown 格式` 的中的反引號 `` ` `` 稱為 `backticks`，若要 `展示` 多個連續的反引號時，例如要再 Markdown 文本顯示出三個用於代碼塊的反引號 `` ``` ``），這時需要使用技巧來 `逃逸` 它們，以使其被當作普通文本顯示。
+2. 特別注意，在 `Markdown 格式` 的中的反引號 `` ` `` 稱為 `backticks`，若要 `展示` 多個連續的反引號時，例如要在 Markdown 文本顯示出三個用於代碼塊的反引號 `` ``` ``），這時需要使用技巧來 `逃逸` 它們，以使其被當作普通文本顯示。
 
 <br>
 
@@ -263,7 +247,7 @@
 
 <br>
 
-1. 可在程式碼區塊加註使用的語言標識如 `python`、`bash` 等之後會使語法高亮；實際可用的語言標識取決於使用的 Markdown 渲染器和它所依賴的語法高亮庫。常見的渲染器如 GitHub Flavored Markdown（GFM）依賴於 Pygments 或 highlight.js 等語法高亮庫。
+5. 可在程式碼區塊加註使用的語言標識如 `python`、`bash` 等之後會使語法高亮；實際可用的語言標識取決於使用的 Markdown 渲染器和它所依賴的語法高亮庫。常見的渲染器如 GitHub Flavored Markdown（GFM）依賴於 Pygments 或 highlight.js 等語法高亮庫。
 
     _常見的語言標識及其對應的中文名稱_
 
