@@ -1,2 +1,9 @@
+# 程式偵錯
 
-*修正中*
+1. logging
+
+2. %debug
+
+3. pub
+
+4. gdb
