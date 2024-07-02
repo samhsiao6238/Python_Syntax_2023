@@ -18,6 +18,8 @@
 
 1. 在 Jupyter 的 Markdown 單元中繪製表格可以直接使用 Markdown 語法。
 
+<br>
+
 2. 範例。
 
     ```bash
