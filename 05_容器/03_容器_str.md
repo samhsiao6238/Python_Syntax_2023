@@ -369,7 +369,7 @@ _Python 的字串是容器，與數組 tuple 一樣是不可變的變數型別_
     hello 4366683952
     ```
 
-- ⭕️ 通過 `f-string` 格式化操作來創建字串，id會不同
+- ⭕️ 通過 `f-string` 格式化操作來建立字串，id會不同
 
     ```python
     s1 = 'hello'

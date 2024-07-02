@@ -28,7 +28,7 @@ _進階用法_
         def __getitem__(self, index):
             return index
 
-    # 創建實體
+    # 建立實體
     obj = SimpleClass()
 
     # 使用 __getitem__ 方法
@@ -64,7 +64,7 @@ _進階用法_
         def __len__(self):
             return len(self.data)
 
-    # 創建實體
+    # 建立實體
     seq = SequenceClass()
 
     # 使用 for 迴圈進行迭代

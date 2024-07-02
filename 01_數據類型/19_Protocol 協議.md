@@ -38,7 +38,7 @@ _內建模組 typing 的功能_
         def close(self) -> None:
             print("Connection closed")
 
-    # 創建 File 和 Connection 的實例，並將它們傳遞給 close_things 函數
+    # 建立 File 和 Connection 的實例，並將它們傳遞給 close_things 函數
     close_things([File(), Connection()])  # 正確執行
     ```
 

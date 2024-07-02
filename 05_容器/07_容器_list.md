@@ -40,14 +40,14 @@ _Python 在初始化 `list` 提供了多種方法。_
 4. 使用串列生成式 (list comprehension)
 
     ```python
-    # 使用串列生成式創建一個 list，每個元素是前10個整數的平方
+    # 使用串列生成式建立一個 list，每個元素是前10個整數的平方
     squares = [x**2 for x in range(10)]
     ```
 
 5. 使用 `*` 運算子進行重複
 
     ```python
-    # 創建一個有 10 個 0 的 list
+    # 建立一個有 10 個 0 的 list
     zeros = [0] * 10
     ```
 
@@ -61,7 +61,7 @@ _Python 在初始化 `list` 提供了多種方法。_
 7. 使用內建函數 `range()`
 
     ```python
-    # 使用 range() 創建一個0到9的整數 list
+    # 使用 range() 建立一個0到9的整數 list
     numbers = list(range(10))
     ```
 

@@ -19,7 +19,7 @@
 
 <br>
 
-1. 使用大括號 `{}` 創建一個空的字典
+1. 使用大括號 `{}` 建立一個空的字典
 
     ```python
     empty_dict = {}
@@ -33,7 +33,7 @@
 
 <br>
 
-2. 使用大括號 `{}` 及鍵值對創建字典
+2. 使用大括號 `{}` 及鍵值對建立字典
 
     ```python
     fruit_colors = {
@@ -51,14 +51,14 @@
 
 <br>
 
-3. 使用內建函數 `dict()` 創建字典
+3. 使用內建函數 `dict()` 建立字典
 
     ```python
-    # 從鍵值對列表創建
+    # 從鍵值對列表建立
     animals = dict([('cat', 'meow'), ('dog', 'bark')])
     print(animals)
     
-    # 使用關鍵字參數創建
+    # 使用關鍵字參數建立
     grades = dict(Alice=85, Bob=90, Charlie=88)
     print(grades)
     ```
@@ -71,7 +71,7 @@
 
 <br>
 
-4. 使用 `dict.fromkeys()` 創建具有相同值的鍵值對
+4. 使用 `dict.fromkeys()` 建立具有相同值的鍵值對
    
    - 當不提供value時，預設值是None。
 
@@ -89,9 +89,9 @@
 
 <br>
 
-5. 字典包容式 (dict comprehension) 創建，也稱 `字典解析` (Dictionary Comprehension)。
-    - 這是一種快速創建字典的方法
-   - 如果想創建一個將數字映射到其平方的字典，可以使用字典解析。
+5. 字典包容式 (dict comprehension) 建立，也稱 `字典解析` (Dictionary Comprehension)。
+    - 這是一種快速建立字典的方法
+   - 如果想建立一個將數字映射到其平方的字典，可以使用字典解析。
 
     ```python
     squares = {x: x*x for x in range(1, 6)}

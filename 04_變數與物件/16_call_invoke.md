@@ -44,7 +44,7 @@
         def __call__(self, x, y):
             return x + y
 
-    # 實例化類別以創建可呼叫物件
+    # 實例化類別以建立可呼叫物件
     add = Adder()
     print(callable(add))  # 判斷物件是否可呼叫
     print(add(2, 3))      # 呼叫物件
