@@ -32,7 +32,7 @@
 1. 範例。
 
     ```bash
-    ![替代文字](./images/image.png)
+    ![替代文字](./images/img_04.png)
     ```
 
 <br>
@@ -144,16 +144,17 @@
 
 <br>
 
-2. 顯示紅色文字假如在 .ipynb 中運行。
+2. 假如在 `.ipynb` 中的 `MARKDOWN` CELL 運行會顯示紅色文字。
 
     ```bash
     <div style="color: red">這是紅色文字。</div>
     
-
     <div style="color: red">這在 .ipynb 的 .md 中顯示會是紅色文字。</div>
 
     <span style="color:red">這在 .ipynb 的 .md 中顯示會是紅色文字。</span>
     ```
+
+    ![](images/img_03.png)
 
 <br>
 
